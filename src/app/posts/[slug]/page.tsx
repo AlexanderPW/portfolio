@@ -24,9 +24,9 @@ export default async function PostPage({
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-3xl px-6 py-14">
+      <main className="mx-auto flex-1 w-full max-w-3xl px-6 py-14">
         <div className="font-sans text-xs font-semibold uppercase tracking-widest text-muted">
           {new Date(post.frontmatter.date).toLocaleDateString(undefined, {
             year: "numeric",

@@ -33,9 +33,9 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <div className="min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <SiteHeader />
-      <main className="mx-auto w-full max-w-3xl px-6 py-14">
+      <main className="mx-auto flex-1 w-full max-w-3xl px-6 py-14">
         <h1 className="font-sans text-4xl font-extrabold tracking-tight text-foreground">
           Projects
         </h1>

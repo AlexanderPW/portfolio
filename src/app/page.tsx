@@ -1,65 +1,123 @@
-import Image from "next/image";
+import Link from "next/link";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { profile } from "@/lib/profile";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="min-h-screen">
+      <SiteHeader />
+      <main className="mx-auto w-full max-w-3xl px-6 py-14">
+        <div className="mb-10">
+          <div className="font-sans text-xs font-semibold uppercase tracking-widest text-muted">
+            Ahoy there.
+          </div>
+          <h1 className="mt-3 font-sans text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+            I’m Alex.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-6 text-lg leading-8 text-muted">
+            I’m a Senior Lead Engineer with 10+ years of experience designing and
+            shipping enterprise systems. I build reliable, cloud-first software and
+            large-scale applications. Lately I’ve been diving deep into AI/ML,
+            exploring how emerging technology can create real business value. I’m
+            also a sailor. If I’m not coding, I’m probably thinking about the ocean.
           </p>
+          <p className="mt-4 text-base leading-7 text-muted">
+            Recent work: leading engineering on a large-scale enterprise application
+            with material revenue impact, along with DevOps, CI/CD pipelines, APIs,
+            and cloud architecture.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center gap-3 font-sans text-sm">
+            <Link
+              href="/projects"
+              className="inline-flex items-center rounded-full bg-foreground px-5 py-2 text-background hover:opacity-95"
+            >
+              See projects
+            </Link>
+            <Link
+              href="/posts"
+              className="inline-flex items-center rounded-full border border-border bg-surface px-5 py-2 text-foreground hover:bg-background"
+            >
+              Read posts
+            </Link>
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center rounded-full border border-border bg-surface px-5 py-2 text-foreground hover:bg-background"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        <section className="mt-14">
+          <div className="font-sans text-sm font-bold text-foreground">
+            Featured
+          </div>
+          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-surface p-5">
+              <div className="font-sans text-sm font-semibold text-foreground">
+                LLM Battle Arena (Chess)
+              </div>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                Pit LLMs against each other in a chess arena. Watch them reason,
+                strategize, and compete.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 font-sans text-xs text-muted">
+                <span className="rounded-full border border-border px-2 py-1">
+                  Chess
+                </span>
+                <span className="rounded-full border border-border px-2 py-1">
+                  LLMs
+                </span>
+                <span className="rounded-full border border-border px-2 py-1">
+                  AI
+                </span>
+              </div>
+              <div className="mt-4">
+                <Link
+                  href="/projects/llm-battle"
+                  className="font-sans text-sm font-semibold text-accent hover:underline"
+                >
+                  See it live →
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-surface p-5">
+              <div className="font-sans text-sm font-semibold text-foreground">
+                Writing (in progress)
+              </div>
+              <p className="mt-2 text-sm leading-6 text-muted">
+                Notes on building reliable systems, AI/ML, DevOps, and automation.
+              </p>
+              <div className="mt-4">
+                <Link
+                  href="/posts"
+                  className="font-sans text-sm font-semibold text-accent hover:underline"
+                >
+                  Browse posts →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-14">
+          <div className="font-sans text-sm font-bold text-foreground">
+            A few things I care about
+          </div>
+          <div className="mt-4 rounded-2xl border border-border bg-surface p-6">
+            <ul className="list-disc space-y-2 pl-5 text-muted">
+              <li>Finding real business value in emerging technology — AI, cloud, and automation.</li>
+              <li>Turning complex systems into things people can rely on.</li>
+              <li>Transforming legacy systems into solutions that scale.</li>
+            </ul>
+          </div>
+        </section>
       </main>
+      <SiteFooter />
     </div>
   );
 }

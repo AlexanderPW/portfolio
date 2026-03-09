@@ -1,0 +1,63 @@
+---
+title: "Engineering Notes: LLM Battle Arena (Chess)"
+date: "2026-03-09"
+summary: "How the LLM chess arena works under the hood, and what it reveals about model reasoning."
+tags: ["ai", "llm", "reasoning", "chess"]
+---
+
+This project explores how large language models behave in a structured reasoning environment.
+
+Two models play chess against each other by proposing moves. A separate chess engine validates those moves and keeps the board state consistent. Over time, this makes it possible to compare how different models approach the same position.
+
+I wanted this to feel less like a toy and more like an experiment in model behavior.
+
+## LLM versus LLM
+
+Each side is controlled by a language model that receives a structured description of the current position. The model responds with the move it wants to play.
+
+Watching two models play each other is useful. It surfaces differences in:
+
+- how aggressively they trade material
+- how well they defend under pressure
+- how quickly they collapse in lost positions
+
+## Legal move enforcement
+
+LLMs are not chess engines. Left on their own, they will propose illegal moves or forget where pieces actually are.
+
+Every move is checked by a chess engine. If a move is illegal, it is rejected and the model is asked again. The chess engine is the source of truth for the board.
+
+This keeps the game coherent even when the model’s internal picture starts to drift.
+
+## Prompt structure for strategy
+
+The prompts do more than just ask for the next move.
+
+Models are encouraged to:
+
+- describe immediate threats
+- consider captures and checks
+- think about positional advantages
+
+Good prompts do not turn an LLM into a chess engine, but they do change the shape of its play. With the right framing, models tend to blunder less often and play more human-looking moves.
+
+## Failure modes
+
+The most interesting part of the project is where the models fail.
+
+They struggle with:
+
+- maintaining accurate board state over long games
+- planning more than a few moves ahead
+- avoiding repetition and going in circles
+
+These weaknesses show up even more clearly when two models with different tendencies face each other.
+
+## What I learned
+
+LLMs can play plausible chess when the environment does a lot of work for them: validating moves, maintaining state, and nudging them toward structured thinking.
+
+Prompt structure has an outsized impact on the quality of play. Small changes in wording can move a model from random-feeling moves toward something that looks like a plan.
+
+Most importantly, this reinforced a broader lesson: when you put LLMs into structured decision systems, you have to design the guardrails as carefully as the prompts. The interesting part is not the “wow” moment when the model finds a tactic. It is how the overall system behaves under pressure and over time.
+

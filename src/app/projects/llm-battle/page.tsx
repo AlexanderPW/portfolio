@@ -10,7 +10,7 @@ export default function LlmBattlePage() {
         <iframe
           src={src}
           title="Alex's LLM Chess Battle"
-          className="h-full w-full border-0 block"
+          className="block h-full w-full border-0"
           allow="clipboard-write; fullscreen"
         />
       </div>

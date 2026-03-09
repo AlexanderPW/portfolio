@@ -10,6 +10,7 @@ const projects = [
     summary:
       "Pit LLMs against each other in a chess battle. Watch them think, strategize, and compete.",
     tags: ["Chess", "LLMs", "AI"],
+    notesSlug: "llm-battle-engineering-notes",
     kind: "internal" as const,
   },
   {
@@ -55,7 +56,7 @@ export default function ProjectsPage() {
                     {p.title}
                   </div>
                   <p className="mt-2 text-sm leading-6 text-muted">{p.summary}</p>
-                  <div className="mt-4 flex flex-wrap gap-2 font-sans text-xs text-muted">
+                  <div className="mt-4 flex flex-wrap items-center gap-2 font-sans text-xs text-muted">
                     {p.tags.map((t) => (
                       <span
                         key={t}
@@ -64,6 +65,14 @@ export default function ProjectsPage() {
                         {t}
                       </span>
                     ))}
+                    {"notesSlug" in p && p.notesSlug ? (
+                      <Link
+                        href={`/posts/${p.notesSlug}`}
+                        className="ml-2 text-accent hover:underline"
+                      >
+                        Engineering notes
+                      </Link>
+                    ) : null}
                   </div>
                 </div>
                 {p.kind === "internal" ? (

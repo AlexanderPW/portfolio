@@ -87,7 +87,7 @@ export default function Home() {
 
             <div className="group rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-accent/60">
               <div className="font-sans text-base font-semibold text-foreground">
-                Writing (in progress)
+                Engineering Notes
               </div>
               <p className="mt-2 text-sm leading-6 text-muted">
                 Notes on building reliable systems, AI/ML, DevOps, and automation.

@@ -51,13 +51,13 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="mt-14">
-          <div className="font-sans text-sm font-bold text-foreground">
+        <section className="mt-16">
+          <div className="font-sans text-sm font-bold tracking-wide text-foreground">
             Featured
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-surface p-5">
-              <div className="font-sans text-sm font-semibold text-foreground">
+            <div className="group rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-accent/60">
+              <div className="font-sans text-base font-semibold text-foreground">
                 LLM Battle Arena (Chess)
               </div>
               <p className="mt-2 text-sm leading-6 text-muted">
@@ -85,8 +85,8 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-border bg-surface p-5">
-              <div className="font-sans text-sm font-semibold text-foreground">
+            <div className="group rounded-2xl border border-border bg-surface p-5 shadow-sm transition-colors hover:border-accent/60">
+              <div className="font-sans text-base font-semibold text-foreground">
                 Writing (in progress)
               </div>
               <p className="mt-2 text-sm leading-6 text-muted">

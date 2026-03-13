@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   title: "Alex Waldrop",
   description:
     "Senior Lead Engineer focused on cloud, reliability, and AI/ML projects. Sailor. Writer.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

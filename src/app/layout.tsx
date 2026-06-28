@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Nunito, Source_Serif_4 } from "next/font/google";
-import { LogRocketProvider } from "@/components/LogRocketProvider";
 import "./globals.css";
 
 const display = Nunito({
@@ -32,7 +31,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${display.variable} ${body.variable} antialiased`}>
-        <LogRocketProvider />
         {children}
       </body>
     </html>
